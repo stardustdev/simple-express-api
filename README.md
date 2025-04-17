@@ -16,6 +16,113 @@ http://localhost:3000/swagger-ui
 
 This provides a detailed overview of all available endpoints, request/response schemas, and allows you to test the API directly from the browser.
 
+## Prerequisites
+
+### Installing Node.js
+
+#### Installing on macOS
+
+1. Using Homebrew:
+
+```bash
+# Install Homebrew if you haven't already
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Node.js
+brew install node
+
+# Verify installation
+node --version
+npm --version
+```
+
+1. Alternatively, download the installer from [Node.js official website](https://nodejs.org/)
+
+#### Installing on Linux (Ubuntu/Debian)
+
+1. Using apt:
+
+```bash
+# Add NodeSource repository
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+# Install Node.js
+sudo apt install -y nodejs
+
+# Verify installation
+node --version
+npm --version
+```
+
+#### Installing on Windows
+
+1. Download the Windows Installer from [Node.js official website](https://nodejs.org/)
+2. Run the installer (e.g., node-v20.x.x-x64.msi)
+3. Follow the installation wizard
+4. Open Command Prompt or PowerShell and verify installation:
+
+```powershell
+node --version
+npm --version
+```
+
+### Installing MongoDB
+
+#### Installing MongoDB on macOS
+
+1. Using Homebrew:
+
+```bash
+# Install Homebrew if you haven't already
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install MongoDB
+brew tap mongodb/brew
+brew install mongodb-community
+
+# Start MongoDB service
+brew services start mongodb-community
+```
+
+#### Installing MongoDB on Linux (Ubuntu/Debian)
+
+```bash
+# Import MongoDB public key
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+
+# Add MongoDB repository
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+# Update package list and install MongoDB
+sudo apt update
+sudo apt install -y mongodb-org
+
+# Start MongoDB service
+sudo systemctl start mongod
+sudo systemctl enable mongod
+```
+
+#### Installing MongoDB on Windows
+
+1. Download the MongoDB Community Server installer from the [official MongoDB website](https://www.mongodb.com/try/download/community)
+2. Run the installer and follow the installation wizard
+3. Choose "Complete" setup type
+4. Install MongoDB Compass (optional but recommended GUI tool)
+5. MongoDB will be installed as a Windows Service and start automatically
+
+### Verifying MongoDB Installation
+
+To verify that MongoDB is running correctly:
+
+```bash
+# Connect to MongoDB shell
+mongosh
+
+# You should see a welcome message and a prompt
+# Type the following to check the version
+db.version()
+```
+
 ## Setup
 
 ### Install dependencies
