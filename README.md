@@ -6,6 +6,16 @@ A simple Node.js Express API that connects to MongoDB and retrieves user data wi
 
 This solution implements a RESTful API endpoint that retrieves user data from MongoDB. The implementation includes proper error handling for invalid ObjectIds and enforces an age restriction (>21) on the queries. The code follows best practices with async/await pattern and proper separation of concerns.
 
+## API Documentation
+
+The API is documented using Swagger UI. After starting the server, you can access the interactive API documentation at:
+
+```plaintext
+http://localhost:3000/swagger-ui
+```
+
+This provides a detailed overview of all available endpoints, request/response schemas, and allows you to test the API directly from the browser.
+
 ## Setup
 
 ### Install dependencies
